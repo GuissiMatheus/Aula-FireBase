@@ -1,8 +1,7 @@
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
 
-import { Task } from './task.model';
+import { Task } from '../../models/task.model';
 
 @Injectable({
   providedIn: 'root'
@@ -10,8 +9,7 @@ import { Task } from './task.model';
 export class TaskService {
 
   constructor(
-    private ngFirestore: AngularFirestore,
-    private router: Router
+    private ngFirestore: AngularFirestore
   ) { }
 
   create(task: Task) {

@@ -1,9 +1,24 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>create-task</ion-title>
+    <ion-title>Create Task</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <form [formGroup]="formulario">
+    <ion-item>
+      <ion-label position="floating">Title</ion-label>
+      <ion-input formControlName="title" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Description</ion-label>
+      <ion-input formControlName="description" type="text"></ion-input>
+    </ion-item>
+
+    <ion-button [disabled]="formulario.invalid" (click)="salvarTask()" type="submit" color="success" expand="block">Salvar</ion-button>
+  </form>
+
+  <pre>{{ formulario.value | json }}</pre>
 
 </ion-content>
